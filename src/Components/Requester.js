@@ -37,7 +37,8 @@ function CreateParamForBrewedDate(item) {
 
 function CreateParam(item, paramName) {
     if (item.value) {
-        const param = `&${paramName}=${item.value}`;
+        const value = MakeSearchString(item.value);
+        const param = `&${paramName}=${value}`;
         queryString += param;
     }
 }
@@ -48,6 +49,12 @@ function SendRequest(queryString, func) {
         .then(data => {
             func(data);
         })
+}
+
+function MakeSearchString(searchString) {
+    const str = searchString.split(' ');
+    const result = str.join('_');
+    return result;
 }
 
 class Requester {

@@ -29,7 +29,7 @@ class BeerViewer extends Component {
         const itemsLength = this.props.items.length;
         return (
             <div style={{ display: 'inline-block', width: '70vw' }} >
-                {itemsLength != 0 &&
+                {itemsLength !== 0 &&
                     <React.Fragment>
                         <ConnectedModalWindow />
                         {

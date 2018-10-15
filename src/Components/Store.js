@@ -1,7 +1,6 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import RequestObject from './RequestObject';
-import ConnectedRequester from './Requester';
 
 function CloneObject(item) {
   const clone = Object.assign({}, item);

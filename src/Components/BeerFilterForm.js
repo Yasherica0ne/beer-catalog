@@ -35,23 +35,23 @@ class BeerFilterForm extends Component {
         const request = this.props.requestObject;
         return (
             <div style={{ display: 'inline-block', position: 'absolute', width: '28vw', top: '2vh' }}>
-                <input value={request.ABV.value} onChange={this.props.onABVChange} style={{ width: '22vw' }} placeholder={'ABV'} />
+                <input value={request.ABV.value} onChange={this.props.onABVChange} style={{ width: '18vw' }} placeholder={'ABV'} />
                 {GetSelectList(this.props.onABVOptionChange, request.ABV)}
 
-                <input value={request.IBU.value} onChange={this.props.onIBUChange} style={{ width: '22vw' }} placeholder={'IBU'} />
+                <input value={request.IBU.value} onChange={this.props.onIBUChange} style={{ width: '18vw' }} placeholder={'IBU'} />
                 {GetSelectList(this.props.onIBUOptionChange, request.IBU)}
 
-                <input value={request.EBC.value} onChange={this.props.onEBCChange} style={{ width: '22vw' }} placeholder={'EBC'} />
+                <input value={request.EBC.value} onChange={this.props.onEBCChange} style={{ width: '18vw' }} placeholder={'EBC'} />
                 {GetSelectList(this.props.onEBCOptionChange, request.EBC)}
 
-                <input value={request.beerName.value} onChange={this.props.onBeerNameChange} style={{ width: '22vw' }} placeholder={'Beer name'} />
-                <input value={request.yeast.value} onChange={this.props.onYeastChange} style={{ width: '22vw' }} placeholder={'Yeast'} />
-                <input value={request.brewed.value} onChange={this.props.onBrewedChange} style={{ width: '22vw' }} placeholder={'Brewed date (mm-yyyy)'} />
+                <input value={request.beerName.value} onChange={this.props.onBeerNameChange} style={{ width: '18vw' }} placeholder={'Beer name'} />
+                <input value={request.yeast.value} onChange={this.props.onYeastChange} style={{ width: '18vw' }} placeholder={'Yeast'} />
+                <input value={request.brewed.value} onChange={this.props.onBrewedChange} style={{ width: '18vw' }} placeholder={'Brewed date (mm-yyyy)'} />
                 {GetSelectList(this.props.onBrewedOptionChange, request.brewed)}
 
-                <input value={request.hops.value} onChange={this.props.onHopsChange} style={{ width: '22vw' }} placeholder={'Hops'} />
-                <input value={request.malt.value} onChange={this.props.onMaltChange} style={{ width: '22vw' }} placeholder={'Malt'} />
-                <input value={request.food.value} onChange={this.props.onFoodChange} style={{ width: '22vw' }} placeholder={'Food'} />
+                <input value={request.hops.value} onChange={this.props.onHopsChange} style={{ width: '18vw' }} placeholder={'Hops'} />
+                <input value={request.malt.value} onChange={this.props.onMaltChange} style={{ width: '18vw' }} placeholder={'Malt'} />
+                <input value={request.food.value} onChange={this.props.onFoodChange} style={{ width: '18vw' }} placeholder={'Food'} />
                 <br />
                 <button onClick={this.Sendrequest}>Find beer</button>
                 <br />
