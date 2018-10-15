@@ -7,6 +7,14 @@ class ModalWindow extends Component {
 
     }
 
+    componentDidMount() {
+        window.addEventListener('keyup', this.props.modalClose, false);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('keyup', this.props.modalClose, false);
+    }
+
     render() {
         let selectedItem = this.props.selectedItem;
         let modalOpen = false
@@ -32,8 +40,17 @@ class ModalWindow extends Component {
                         <img style={{ height: '70vh', display: 'inline-block', marginLeft: '5vw', marginTop: '15vh' }}
                             src={selectedItem.image_url} />
                         <div style={{ display: 'inline', margin: 'auto 5vw auto 3vw', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                            <div>{`Name: ${selectedItem.name}`}</div>
                             <div>{`Description: ${selectedItem.description}`}</div>
                             <div>{`Tagline: ${selectedItem.tagline}`}</div>
+                            <div>{`First brewed: ${selectedItem.first_brewed}`}</div>
+                            <div>{`ABV: ${selectedItem.abv}`}</div>
+                            <div>{`IBU: ${selectedItem.ibu}`}</div>
+                            <div>{`EBC: ${selectedItem.ebc}`}</div>
+                            {/* <div>{`Malt: ${selectedItem.ingridients.malt}`}</div>
+                            <div>{`Hops: ${selectedItem.ingridients.hops}`}</div>
+                            <div>{`Yeast: ${selectedItem.ingridients.yeast}`}</div> */}
+                            <div>{`Food pairing: ${selectedItem.food_pairing}`}</div>
                             <button onClick={this.props.modalClose} id={'ExitButton'}>OK</button>
                         </div>
                     </div>
@@ -45,12 +62,11 @@ class ModalWindow extends Component {
 
 let ConnectedModalWindow = connect(
     state => ({
-        items: state.beerItems,
         selectedItem: state.selectedItem
     }),
     dispatch => ({
         modalClose: (event) => {
-            if (event.target.id === 'environment' || event.target.id === 'ExitButton') {
+            if (event.target.id === 'environment' || event.target.id === 'ExitButton' || event.keyCode == 27) {
                 dispatch({
                     type: 'CHANGE_SELECTED',
                     beer: null
