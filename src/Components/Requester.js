@@ -24,10 +24,10 @@ function CreateParamVithAddedOption(item, paramName) {
 function CreateParamForBrewedDate(item) {
     if (item.value) {
         let option = '';
-        if (item.added === ParamEnum.ValueLower) {
+        if (item.added == ParamEnum.ValueLower) {
             option = 'before';
         }
-        else if (item.added === ParamEnum.ValueGreater) {
+        else if (item.added == ParamEnum.ValueGreater) {
             option = 'after';
         }
         const param = `&brewed_${option}=${item.value}`;
